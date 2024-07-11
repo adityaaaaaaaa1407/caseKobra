@@ -28,6 +28,7 @@ import { useUploadThing } from "@/lib/uploadthing";
 import { useToast } from "@/components/ui/use-toast";
 import { useMutation } from "@tanstack/react-query";
 import { saveConfig as _saveConfig, SaveConfigArgs } from "./actions";
+import { FaSpinner } from "react-icons/fa";
 import { useRouter } from "next/navigation";
 
 interface DesignConfiguratorProps {
@@ -406,8 +407,7 @@ const DesignConfigurator = ({
                 size="sm"
                 className="w-full"
               >
-                Continue
-                <ArrowRight className="h-4 w-4 ml-1.5 inline" />
+                {isPending ? <FaSpinner className="spinner" /> : " continue"}
               </Button>
             </div>
           </div>
